@@ -24,10 +24,11 @@ const plugins = [
   new MiniCssExtractPlugin({
     filename: `${p.dist.styles.name}/[name].css`
   }),
-  new HtmlPlugin({
-    template: `${p.src.pages.root}/index.html`,
-    filename: `${p.dist.pages.name}/index.html`
-  })
+  ...u.getPages(p.src.pages.root).map(page => new HtmlPlugin({
+    template: `${p.src.pages.root}/${page}`,
+    filename: `${p.dist.pages.name}/${page}`,
+    inject: true
+  }))
 ];
 
 if (mode.isProd) {
