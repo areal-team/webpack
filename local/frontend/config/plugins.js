@@ -42,19 +42,19 @@ if (mode.isProd) {
   ];
 
   const patterns = [];
-  if (u.hasFiles(p.src.images.root)) {
+  if (u.hasFiles(p.src.images.root) && u.hasFiles(p.src.images.root)) {
     patterns.push({
       from: p.src.images.root,
       to: p.dist.images.root
     });
   }
-  if (u.hasFiles(p.src.fonts.root)) {
+  if (u.hasFiles(p.src.fonts.root) && u.hasFiles(p.src.fonts.root)) {
     patterns.push({
       from: p.src.fonts.root,
       to: p.dist.fonts.root
     });
   }
-  if (u.hasFiles(p.src.static.root)) {
+  if (u.hasFiles(p.src.static.root) && u.hasFiles(p.src.static.root)) {
     patterns.push({
       from: p.src.static.root,
       to: p.dist.static.root

@@ -4,16 +4,12 @@
   "description": "Сборка webpack",
   "private": true,
   "scripts": {
-    "dev:build": "clear && cross-env NODE_ENV=development webpack --progress",
-    "prod:build": "clear && cross-env NODE_ENV=production webpack --progress",
-    "dev:watch": "clear && cross-env NODE_ENV=development webpack --watch",
-    "prod:watch": "clear && cross-env NODE_ENV=production webpack --watch",
-    "dev:server": "clear && cross-env NODE_ENV=development webpack-dev-server --open",
-    "prod:server": "clear && cross-env NODE_ENV=production webpack-dev-server --open",
-    "dev": "clear && ntl -e start dev prod.*",
-    "prod": "clear && ntl -e start prod dev.*",
-    "back": "clear && npm start",
-    "start": "clear && ntl -e start back dev:.* prod:.*"
+    "dev:build": "cross-env NODE_ENV=development webpack --progress",
+    "prod:build": "cross-env NODE_ENV=production webpack --progress",
+    "dev:watch": "cross-env NODE_ENV=development webpack --watch",
+    "prod:watch": "cross-env NODE_ENV=production webpack --watch",
+    "dev:server": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "prod:server": "cross-env NODE_ENV=production webpack-dev-server --open"
   },
   "author": "Areal <hello@arealidea.ru>",
   "license": "MIT",
@@ -28,19 +24,6 @@
     "> 1%",
     "last 4 version"
   ],
-  "ntl": {
-    "descriptions": {
-      "dev:build": "Собрать проект в режиме разработки",
-      "prod:build": "Собрать проект в режиме производства",
-      "dev:watch": "Отслеживать и пересобирать проект в режиме разработки",
-      "prod:watch": "Отслеживать и пересобирать проект в режиме производства",
-      "dev:server": "Запустить сервер проекта в режиме разработки",
-      "prod:server": "Запустить сервер проекта в режиме производства",
-      "dev": "Разработка",
-      "prod": "Производство",
-      "back": "Назад"
-    }
-  },
   "devDependencies": {
     "@babel/cli": "^7.10.4",
     "@babel/core": "^7.10.4",
@@ -62,7 +45,6 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
-    "ntl": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-easy-import": "^3.0.0",
     "postcss-flexbugs-fixes": "^4.2.1",
